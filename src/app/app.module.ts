@@ -1,18 +1,17 @@
+import { PlayfieldModule } from './playfield/playfield.module';
 import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { StatbarComponent } from './components/statbar/statbar.component';
-import { PokemonComponent } from './components/pokemon/pokemon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StatbarComponent,
-    PokemonComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    PlayfieldModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

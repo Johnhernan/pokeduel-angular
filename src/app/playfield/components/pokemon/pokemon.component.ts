@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Pokemon } from '../../models/Pokemon.model'
+import { Pokemon } from '../../../models/Pokemon.model'
 
 @Component({
   selector: 'app-pokemon',
@@ -14,5 +14,9 @@ export class PokemonComponent implements OnInit {
   ngOnInit() {
     if(typeof this.pokemon?.pokemonName !== undefined ){console.log("here")}
     console.log(this.pokemon?.pokemonName)
+  }
+
+  onBattle() {
+
   }
 }

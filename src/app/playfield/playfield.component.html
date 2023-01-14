@@ -1,0 +1,16 @@
+
+<div class="container" id="play-grid">
+
+  <div class="pokemon-display-grid">
+      <div *ngFor="let pokemon in playerPokemons" class="pokemon">
+        <app-pokemon [pokemon]='pokemon' onBattle="battle()"></app-pokemon>
+        <app-statbar></app-statbar>
+
+        <button (click)="battle()"> Get type</button>
+      </div>
+  </div>
+  <div class="control-panel">
+
+  </div>
+</div>
+
