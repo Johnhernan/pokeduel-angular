@@ -1,6 +1,6 @@
-import { PlayerStats } from './../../../models/PlayerStats';
 import { Component, Input} from '@angular/core';
 
+import { PlayerStats } from '../shared/models/PlayerStats';
 @Component({
   selector: 'app-statbar',
   templateUrl: './statbar.component.html',

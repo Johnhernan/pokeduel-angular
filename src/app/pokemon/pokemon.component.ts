@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { Pokemon } from '../../../models/Pokemon';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
+
+import { Pokemon } from '../shared/models/Pokemon';
 
 @Component({
   selector: 'app-pokemon',
@@ -9,8 +10,7 @@ import { Pokemon } from '../../../models/Pokemon';
 
 export class PokemonComponent  {
   @Input() pokemon!: Pokemon;
-  @Output() onReroll!: EventEmitter<boolean>;
-
+  @Output() onReroll: EventEmitter<boolean> = new EventEmitter<boolean>(false);
 
   reroll() {
     this.onReroll.emit(true);

@@ -1,9 +1,9 @@
-import { PlayerPokemon } from './../PlayerPokemon';
 import { Injectable } from '@angular/core';
 import { forkJoin, map, take } from 'rxjs';
 import { HttpClient, } from '@angular/common/http';
-import { Type } from '../Type';
 
+import { Type } from '../Type';
+import { Pokemon } from '../Pokemon';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,12 +18,12 @@ export class PokeApiService {
     const randomId = Math.floor(Math.random() * 151);
 
     return this._httpClient
-      .get<PlayerPokemon>(`${this.apiUrl}pokemon/${randomId}`)
+      .get<Pokemon>(`${this.apiUrl}pokemon/${randomId}`)
       .pipe(
         take(1),
-        map( (res:any) =>
-          (res ? {name: res?.species?.name, types:res?.types}: {name: "", types:[]})
-        )
+        // map( (res:any) =>
+        //   (res ? {name: res?.species?.name, types:res?.types}: {name: "", types:[]})
+        // )
       );
   }
   getTypes(playerTypes: any) {

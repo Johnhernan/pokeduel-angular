@@ -1,7 +1,8 @@
-import { PlayerStats } from './../models/PlayerStats';
-import { PlayerPokemon } from './../models/PlayerPokemon';
 import { Component, OnInit} from '@angular/core';
-import { PokeApiService } from '../models/services/poke-api-service.service';
+
+import { PokeApiService } from '../shared/models/services/poke-api-service.service';
+import { PlayerStats } from '../shared/models/PlayerStats';
+import { Pokemon } from '../shared/models/Pokemon';
 
 @Component({
   selector: 'app-playfield',
@@ -10,31 +11,32 @@ import { PokeApiService } from '../models/services/poke-api-service.service';
 })
 export class PlayfieldComponent implements OnInit {
   private isGameStarted: boolean = false;
-  private playerStats: PlayerStats[] = [];
-  private playerPokemons: PlayerPokemon[] = [];
+  playerStats: PlayerStats[] = [];
+  playerPokemons: Pokemon[] = [{name: "", types:[]}, {name: "", types:[]}];
 
   constructor(private _pokeApiService: PokeApiService) {
 
   }
 
   ngOnInit() {
-    console.log("here")
+
 
   }
 
   getPokemons() {
     this._pokeApiService
       .getPokemon()
-      .subscribe((res: PlayerPokemon) => this.playerPokemons.push(res));
+      .subscribe((res: Pokemon) => {console.log(res);this.playerPokemons.push(res)});
 
-    this._pokeApiService
-      .getPokemon()
-      .subscribe((res: PlayerPokemon) => this.playerPokemons.push(res));
+    // this._pokeApiService
+    //   .getPokemon()
+    //   .subscribe((res: Pokemon) => this.playerPokemons.push(res));
   }
+  reroll(){
 
+  }
   battle() : void {
-    const pokemonTypes = this.playerPokemons.map((pokemon: PlayerPokemon) => pokemon?.types);
-    console.log(pokemonTypes)
+    const pokemonTypes = this.playerPokemons.map((pokemon: Pokemon) => pokemon?.types);
     this._pokeApiService.getTypes(pokemonTypes).subscribe()
   }
 
