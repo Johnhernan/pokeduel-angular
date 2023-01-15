@@ -1,0 +1,18 @@
+#play-grid {
+  background-color: black;
+  padding: 3%;
+  border-radius: 5px;
+}
+
+.pokemon-display-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: space-between;
+
+}
+
+.control-panel {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+}
