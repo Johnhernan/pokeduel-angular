@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { PlayerStats } from '../shared/models/PlayerStats';
 @Component({
@@ -6,6 +6,10 @@ import { PlayerStats } from '../shared/models/PlayerStats';
   templateUrl: './statbar.component.html',
   styleUrls: ['./statbar.component.css']
 })
-export class StatbarComponent {
-  @Input() stats: PlayerStats | undefined;
+export class StatbarComponent implements OnInit {
+  @Input() stats: PlayerStats = new PlayerStats();
+
+  ngOnInit() {
+    console.log("playerStats rendered")
+  }
 }
