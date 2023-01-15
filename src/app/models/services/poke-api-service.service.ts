@@ -32,7 +32,7 @@ export class PokeApiService {
       .map((pTypes: Type[] )=> pTypes ? pTypes: null)
       .map((type: Type) => type?.url ? type.url: null );
 
-    return forkJoin(playersTypes).pipe(take(1), map(x => {console.log(x)}));
+    return forkJoin(playersTypes).pipe(take(1), map(x => {console.log(x); x}));
 
     // .get<PlayerPokemon>(`${this.apiUrl}type/${randomId}`)
     // .pipe(
@@ -44,7 +44,4 @@ export class PokeApiService {
 
   }
 
-  compareTypes(){
-
-  }
 }

@@ -1,3 +1,4 @@
+import { PokeApiService } from './../models/services/poke-api-service.service';
 import { StatbarComponent } from './components/statbar/statbar.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { NgModule } from '@angular/core';
@@ -10,12 +11,13 @@ import { PlayfieldComponent } from './playfield.component';
     PokemonComponent,
     StatbarComponent
   ],
+  exports: [
+    CommonModule,
+    PlayfieldComponent,
+  ],
   imports: [
     CommonModule
   ],
-  exports: [
-    PlayfieldComponent
-  ]
 
 })
 export class PlayfieldModule { }

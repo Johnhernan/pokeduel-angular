@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Pokemon } from '../../../models/Pokemon.model'
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Pokemon } from '../../../models/Pokemon';
 
 @Component({
   selector: 'app-pokemon',
@@ -7,16 +7,12 @@ import { Pokemon } from '../../../models/Pokemon.model'
   styleUrls: ['./pokemon.component.css']
 })
 
-export class PokemonComponent implements OnInit {
-  @Input("pokemon") pokemon: Pokemon | undefined ;
+export class PokemonComponent  {
+  @Input() pokemon!: Pokemon;
+  @Output() onReroll!: EventEmitter<boolean>;
 
 
-  ngOnInit() {
-    if(typeof this.pokemon?.pokemonName !== undefined ){console.log("here")}
-    console.log(this.pokemon?.pokemonName)
-  }
-
-  onBattle() {
-
+  reroll() {
+    this.onReroll.emit(true);
   }
 }

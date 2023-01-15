@@ -9,17 +9,16 @@ import { PokeApiService } from '../models/services/poke-api-service.service';
   styleUrls: ['./playfield.component.css']
 })
 export class PlayfieldComponent implements OnInit {
-  title = 'pokeduel-angular';
-  isGameStarted: boolean = false;
-  playerStats: PlayerStats[] = [];
-  playerPokemons: PlayerPokemon[] = [];
+  private isGameStarted: boolean = false;
+  private playerStats: PlayerStats[] = [];
+  private playerPokemons: PlayerPokemon[] = [];
 
   constructor(private _pokeApiService: PokeApiService) {
 
   }
 
   ngOnInit() {
-
+    console.log("here")
 
   }
 
@@ -33,9 +32,14 @@ export class PlayfieldComponent implements OnInit {
       .subscribe((res: PlayerPokemon) => this.playerPokemons.push(res));
   }
 
-  battle() {
-    const pokemonTypes = this.playerPokemons.map((pokemon: PlayerPokemon) => pokemon.types);
-
+  battle() : void {
+    const pokemonTypes = this.playerPokemons.map((pokemon: PlayerPokemon) => pokemon?.types);
+    console.log(pokemonTypes)
     this._pokeApiService.getTypes(pokemonTypes).subscribe()
   }
+
+  // compareWeakness(player1Types, player2Types) : number[] {
+
+  //   return []
+  // }
 }
