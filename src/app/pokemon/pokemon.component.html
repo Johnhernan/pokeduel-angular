@@ -1,0 +1,8 @@
+<div class="pokemon">
+  <img src="" alt="" class="pokemon">
+  <h4 class="pokemon-name"> {{ pokemon.name }}</h4>
+  <div class="types">
+    <span *ngFor="let type of pokemon.types"class="type">{{type}}</span>
+  </div>
+  <button (click)="reroll()"> Rerroll </button>
+</div>
