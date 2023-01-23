@@ -7,9 +7,14 @@ import { PlayerStats } from '../shared/models/PlayerStats';
   styleUrls: ['./statbar.component.css']
 })
 export class StatbarComponent implements OnInit {
-  @Input() stats: PlayerStats = new PlayerStats();
-
+  @Input() playerStats!: PlayerStats;
+  lives: number[] = [];
+  rerolls: number[] = [];
+  wins: number[] = [];
   ngOnInit() {
-    console.log("playerStats rendered")
+    this.lives = Array(this.playerStats.lives).fill(0);
+    this.rerolls = Array(this.playerStats.rerolls).fill(0);
   }
+
+
 }

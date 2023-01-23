@@ -1,0 +1,14 @@
+.stat-bar {
+  margin: 1.25rem 0;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.stat-box {
+  display: flex;
+  justify-content: center;
+}
+.stat-icon {
+  height: auto;
+  width: 1.5rem;
+}

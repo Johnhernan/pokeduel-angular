@@ -3,7 +3,7 @@
   <div class="pokemon-display-grid">
       <div *ngFor="let player of players" class="pokemon">
         <app-pokemon [pokemon]='player.playerPokemon' (onReroll)="reroll()"></app-pokemon>
-        <app-statbar [stats]="player.playerStats"></app-statbar>
+        <app-statbar [playerStats]="player.playerStats"></app-statbar>
       </div>
   </div>
   <div class="control-panel">

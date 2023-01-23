@@ -24,12 +24,10 @@ export class PlayfieldComponent implements OnInit {
 
   getPokemons() {
     this._pokeApiService.getPokemons().subscribe(res => {
-      res.forEach((pokemon: any, index: number)=> {
+      res.forEach((pokemon: any, index: number) => {
         this.players[index].playerPokemon = pokemon;
       });
-    })
-    console.log("playfield rendered")
-
+    });
   }
 
   reroll(){
