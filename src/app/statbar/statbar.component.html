@@ -1,1 +1,14 @@
-<p>statbar works!</p>
+<div class="stat-bar">
+  <div class="stat-box">
+    <span *ngFor="let life of lives">
+      <img class="stat-icon" src="https://imgs.search.brave.com/wxZ0QfgtIseB51II-cfRARRKSvya8XwhQtNri-0tcuY/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvcHJl/dmlld3MvMDAwLzU3/Ni80NDAvb3JpZ2lu/YWwvaGVhcnQtaWNv/bi12ZWN0b3ItaWxs/dXN0cmF0aW9uLmpw/Zw">
+    </span>
+  </div>
+
+  <div class="stat-box">
+    <span class="stat-box" *ngFor="let reroll of  rerolls">
+      <img class="stat-icon" src="https://imgs.search.brave.com/ZoQ0xoY95MRTiArvig58ba7oucB8B87-u9Q2NiciENw/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9wbmdp/bWcuY29tL3VwbG9h/ZHMvcG9rZWJhbGwv/cG9rZWJhbGxfUE5H/MjIucG5n">
+    </span>
+  </div>
+
+</div>
